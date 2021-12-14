@@ -1,0 +1,20 @@
+/*
+  see https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc
+    for syntax
+*/
+{
+  // line-length is important for readability but for
+  //  links especially it gets unreasonable to do fully
+  //  Prettier is used for automatic formatting instead
+  "line-length": {
+    "line_length": 80
+  },
+  // First line in a file should be a top-level heading
+  //  Github Wiki automatically generates h1 from filename
+  //  so we don't need to/shouldn't do it ourselves
+  "first-line-heading": false,
+  "no-inline-html": {
+    "allowed_elements": ["details", "summary", "br", "img", "kbd"]
+  },
+  "no-trailing-punctuation": false
+}

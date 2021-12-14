@@ -4,9 +4,9 @@ Mainly for RStudio users to find similar editor features in VSCode.
 
 Treat `names.like.this` as one word for selection etc.
 
-`settings.json`: 
+`settings.json`:
 
-```
+```json
 "[r]": {
     "editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
 }
@@ -14,34 +14,35 @@ Treat `names.like.this` as one word for selection etc.
 
 ## C/C++
 
-[C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) to write Rcpp
+[C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+to write Rcpp
 
 `.vscode/c_cpp_properties.json`:
 
 ```json
 {
-    "configurations": [
-        {
-            "name": "Linux",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "${env:HOME}/R/x86_64-pc-linux-gnu-library/3.6/Rcpp/include",
-                "/usr/share/R/include"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "Linux",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${env:HOME}/R/x86_64-pc-linux-gnu-library/3.6/Rcpp/include",
+        "/usr/share/R/include"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "clang-x64"
+    }
+  ],
+  "version": 4
 }
 ```
 
 `.clang-format`:
 
-```
+```yaml
 ---
 Language: Cpp
 BasedOnStyle: LLVM

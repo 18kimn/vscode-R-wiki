@@ -1,6 +1,13 @@
-The R language service implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/specifications/specification-current/) and provides a set of language analysis features such as completion, signature, hover, definition, references, diagnostics, etc.
+The R language service implements the
+[Language Server Protocol](https://microsoft.github.io/language-server-protocol/specifications/specification-current/)
+and provides a set of language analysis features such as completion, signature,
+hover, definition, references, diagnostics, etc.
 
-The language service is provided by the R language server (implemented by [languageserver](https://github.com/REditorSupport/languageserver)) which performs static code analysis with the latest user documents in `R` and `Rmd` languages. Therefore, it does not rely on an active R session and thus does not require the code to be executed.
+The language service is provided by the R language server (implemented by
+[languageserver](https://github.com/REditorSupport/languageserver)) which
+performs static code analysis with the latest user documents in `R` and `Rmd`
+languages. Therefore, it does not rely on an active R session and thus does not
+require the code to be executed.
 
 To install the package from CRAN:
 
@@ -19,10 +26,21 @@ remotes::install_github("REditorSupport/languageserver")
 The following settings could be set up to deviate from the default behavior:
 
 - `r.lsp.enabled`: Enable the R language service (default).
-- `r.rpath.windows`, `r.rpath.mac`, `r.rpath.linux`: Path to R binary for launching the R Language Server package (see below). Examples: `/usr/bin/R` (Linux/macOS), `C:\\Program Files\\R\\R-4.1.0\\bin\\x64\\R.exe` (Windows). If the settings are left blank (default), then the R path will be detected from the `PATH` environment variable and Windows registry. It should be *vanilla* R rather than radian console.
-- `r.lsp.args`: The command line arguments to use when launching R Language Server. Example: `--vanilla` to disable loading startup scripts such as `.Rprofile` and `Rprofile.site`.
-- `r.lsp.debug`: Enable debugging traces. Defaults to `false`. Set this to `true` if you are having trouble getting the Language Server working.
-- `r.lsp.diagnostics`: Enable linting of R code, using the [lintr](https://github.com/jimhester/lintr) package. Defaults to `true`. To disable this, you must have at least version 0.2.7 of the R Language Server installed.
+- `r.rpath.windows`, `r.rpath.mac`, `r.rpath.linux`: Path to R binary for
+  launching the R Language Server package (see below). Examples: `/usr/bin/R`
+  (Linux/macOS), `C:\\Program Files\\R\\R-4.1.0\\bin\\x64\\R.exe` (Windows). If
+  the settings are left blank (default), then the R path will be detected from
+  the `PATH` environment variable and Windows registry. It should be _vanilla_ R
+  rather than radian console.
+- `r.lsp.args`: The command line arguments to use when launching R Language
+  Server. Example: `--vanilla` to disable loading startup scripts such as
+  `.Rprofile` and `Rprofile.site`.
+- `r.lsp.debug`: Enable debugging traces. Defaults to `false`. Set this to
+  `true` if you are having trouble getting the Language Server working.
+- `r.lsp.diagnostics`: Enable linting of R code, using the
+  [lintr](https://github.com/jimhester/lintr) package. Defaults to `true`. To
+  disable this, you must have at least version 0.2.7 of the R Language Server
+  installed.
 
 ## Completion
 
@@ -67,8 +85,6 @@ The following settings could be set up to deviate from the default behavior:
 ![On-type-formatting](https://user-images.githubusercontent.com/4662568/74438354-f0379900-4ea4-11ea-9743-99e8a8950d40.gif)
 
 ## Code actions
-
-
 
 ## Go to definition
 
