@@ -1,7 +1,50 @@
-Besides the recommended tools from the
+In addition to the setup detailed in the
 [Getting Started](https://github.com/REditorSupport/vscode-R/wiki/Getting-Started)
-page, we also recommend using the following to find features like those in
-RStudio.
+page, or the configuration available in the
+[settings page](https://github.com/REditorSupport/vscode-R/wiki/Extension-settings),
+users may be interested in further configuration to match the experience of
+other editors like RStudio. Many of these are features that vscode-R does not
+directly control, but are possible to handle through VSCode and the libraries
+vscode-R interfaces with. We suggest some of those options here.
+
+## Formatting
+
+User's `settings.json` file in VSCode can be configured to format on save:
+
+```json
+{
+  "[r]": {
+    "editor.defaultFormatter": "Ikuyadeu.r",
+    "editor.formatOnSave": true
+  },
+  "[rmd]": {
+    "editor.defaultFormatter": "Ikuyadeu.r",
+    "editor.formatOnSave": true
+  }
+}
+```
+
+## Linting
+
+It's also useful to set some sensible defaults for the R linter. These can be
+configured in a `.lintr` file at your computer's `HOME` directory (or
+`USERPROFILE` if you are on Windows), or in your current project.
+
+The following example allows commented code, which is often a necessity, and
+prevents checking if objects are in global scope, since this can throw
+[extraneous errors](https://github.com/r-lib/lintr/issues/482) if functions from
+libraries are called.
+
+```dcf
+linters: with_defaults(
+  object_usage_linter = NULL,
+  commented_code_linter = NULL
+)
+```
+
+See the
+[`lintr` docs](https://github.com/REditorSupport/languageserver#services-implemented)
+for more configuration details and rules.
 
 ## Dots in variable/function names
 

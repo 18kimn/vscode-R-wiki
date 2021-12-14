@@ -1,4 +1,12 @@
-This extension contributes the following settings:
+This page details the settings of vscode-R that can be set in VSCode's
+`settings.json` file.
+
+Please also see
+[recommend extensions and configurations](https://github.com/REditorSupport/vscode-R/wiki/R-Language-Service),
+some
+[useful keyboard shortcuts](https://github.com/REditorSupport/vscode-R/wiki/Keyboard-shortcuts)
+and the options for the language server's formatter and linter that are detailed
+[here](https://github.com/REditorSupport/languageserver#faq).
 
 ## General Editor Settings
 
@@ -129,3 +137,24 @@ This extension contributes the following settings:
   workspace with guests
 - `r.liveShare.defaults.shareBrowser`: default boolean value for automatically
   sharing R browser ports with guests
+
+## Language server settings
+
+The following settings could be set up to deviate from the default behavior:
+
+- `r.lsp.enabled`: Enable the R language server (default).
+- `r.rpath.windows`, `r.rpath.mac`, `r.rpath.linux`: Path to R binary for
+  launching the R Language Server package (see below). Examples: `/usr/bin/R`
+  (Linux/macOS), `C:\\Program Files\\R\\R-4.1.0\\bin\\x64\\R.exe` (Windows). If
+  the settings are left blank (default), then the R path will be detected from
+  the `PATH` environment variable and Windows registry. It should be _vanilla_ R
+  rather than radian console.
+- `r.lsp.args`: The command line arguments to use when launching R Language
+  Server. Example: `--vanilla` to disable loading startup scripts such as
+  `.Rprofile` and `Rprofile.site`.
+- `r.lsp.debug`: Enable debugging traces. Defaults to `false`. Set this to
+  `true` if you are having trouble getting the Language Server working.
+- `r.lsp.diagnostics`: Enable linting of R code, using the
+  [lintr](https://github.com/jimhester/lintr) package. Defaults to `true`. To
+  disable this, you must have at least version 0.2.7 of the R Language Server
+  installed.
