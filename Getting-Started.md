@@ -16,14 +16,16 @@ and _Rename symbol_, and the
 enable interactive debugging of any target.
 
 This vscode-R extension is an extension that attempts to make it easier to write
-R code and work with R sessions interactively in VS Code. It is not intended to
-be a drop-in replacement of RStudio yet could be found useful by those who want
-a unified development environment to work with multiple programming languages
-such as R, Python, C++, etc., and those who need to work with remote servers,
+R code and work with R sessions interactively in VS Code. Though vscode-R
+[provides support](https://github.com/REditorSupport/vscode-R/wiki/RStudio-addin-support)
+emulating RStudio's features, it is not intended to be a full drop-in
+replacement for RStudio. In contrast, vscode-R is useful for those who want a
+unified development environment to work with multiple programming languages such
+as R, Python, C++, etc., as well as those who need to work with remote servers,
 containers, self-managed R sessions or multiple R sessions at the same time.
 
-To have full R development experience, we recommend that you install all the
-following packages:
+To enjoy the full R development experience, we recommend that you install all of
+the following packages:
 
 - [vscode-R](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r):
   Provides R language service, R Markdown, and interactivity between VS Code and
@@ -42,8 +44,17 @@ following packages:
 - [VSCode-R-Debugger](https://github.com/ManuelHentschel/VSCode-R-Debugger): A
   VS Code extension to support R debugging capabilities.
 
-- [httpgd](https://github.com/nx10/httpgd): An R package to provide a graphics
+- [`httpgd`](https://github.com/nx10/httpgd): An R package to provide a graphics
   device that asynchronously serves SVG graphics via HTTP and WebSockets.
+  vscode-R uses `httpgd` to provide an interactive
+  [plot viewer](https://github.com/REditorSupport/vscode-R/wiki/Plot-viewer).
+
+- [rmarkdown](https://rmarkdown.rstudio.com): An R package and format for
+  creating reproducible and narrative-driven data analyses. vscode-R provides
+  tooling to edit, run, and knit Rmarkdown files.
+
+- [Pandoc](https://pandoc.org) (optional): A powerful document conversion tool.
+  vscode-R uses this to render help previews when users hover over R code.
 
 However, the astounding flexibility of VS Code comes at a cost that some users
 might not find enjoyable in the beginning: Some setup and configuration are

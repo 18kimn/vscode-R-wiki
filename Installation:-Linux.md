@@ -30,6 +30,21 @@ or install the development version with the newest features:
 remotes::install_github("REditorSupport/languageserver")
 ```
 
+You can also install the `rmarkdown` package and Pandoc rendering library to see
+formatted R help pages upon [hover](#hover). Previews of function documentation
+without these dependencies will show a plain page.
+
+`rmarkdown` can be installed with:
+
+```r
+install.packages("rmarkdown")
+```
+
+Pandoc is
+[automatically installed](https://alexd106.github.io/intro2R/install_rmarkdown.html)
+if you have RStudio on your machine. See the official installation guide
+[here](https://pandoc.org/installing.html) if you do not have RStudio.
+
 ## radian
 
 [radian](https://github.com/randy3k/radian) is highly recommended as the R
